@@ -42,3 +42,16 @@ Provide a caption (optional)
 在 Web3 的下半场，我们最不缺的，就是那些声称能计算出底部的模型；我们最缺的，是能在黑暗森林里拿得住枪、守得住风控底线的重装执行者。
 Lobster Sentinel (龙虾) 交出的答卷极度克制：我们将 OKX Onchain OS 的强大能力收敛进一个安全的本地容器；将人类脆弱的临场决策，移交给冰冷、透明的机器逻辑。
 这不仅仅是一个 AI 交易工具，更是一份不可篡改的机器交易契约。把策略交给 AI，把纪律交给代码。只有在极端波动中能够硬性守住底线的系统，才配称为真正的 Agent 基础设施。
+第一步：环境克隆与配置
+git clone https://github.com/hkezon/longxia-bole
+cd longxia-bole
+cp .env.example .env
+在 .env 文件中填入你的 OKX API Key 与 Telegram Bot Token，完成物理隔离的安全配置。
+第二步：容器化一键拉起
+我们提供完整的 Dockerfile 与 requirements.txt。无需复杂的环境配置，一键启动执行体：
+docker build -t lobster-sentinel .
+docker run -d --env-file .env lobster-sentinel
+第三步：极简终端与实盘审计
+启动后，Agent 自动进入静默守卫状态。用户的所有策略指令、以及系统的每一次“硬拦截”与“刚性强平”，都将实时推送到指定的 Telegram 对话框，完成闭环审计。
+👉 完整开源代码库、部署配置及实盘拦截演示，请查阅：
+https://github.com/hkezon/longxia-bole/tree/main
